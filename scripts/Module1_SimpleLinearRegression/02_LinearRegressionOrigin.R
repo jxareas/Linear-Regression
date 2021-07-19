@@ -122,7 +122,7 @@ model <- lm(
 # B1 ~ 0.6463
 origin_model <-
         lm(data = galton,
-           formula = I(child - mean(child)) ~ I(parent - mean(parent)) - 1)
+           formula = I(child - mean(child)) ~ 0 + I(parent - mean(parent))) 
 
 # Regression using Mean Centered Variables
 # B0 is approximately 0.
