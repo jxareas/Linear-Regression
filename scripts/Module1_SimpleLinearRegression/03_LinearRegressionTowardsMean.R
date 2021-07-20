@@ -2,6 +2,7 @@
 
 require(UsingR)
 require(ggplot2)
+require(ggthemes)
 require(dplyr)
 
 # Data --------------------------------------------------------------------
@@ -12,8 +13,6 @@ father.son <- father.son |>
         Filter(f = is.numeric) |>
         scale() |>
         as.data.frame()
-
-
 
 # Plot --------------------------------------------------------------------
 
@@ -33,6 +32,7 @@ ggplot(data = father.son, mapping = aes(x = fheight, y = sheight, col = sheight)
         ylim(-3, 3) +
         geom_vline(xintercept = 0, col = "black", alpha = 0.5) +
         geom_hline(yintercept = 0, col = "black", alpha = 0.5) +
+        theme_igray() +
         theme(
                 plot.title = element_text(face = "bold", size = 14, hjust = 0.5),
                 axis.title.x = element_text(face = "bold.italic"),
@@ -47,3 +47,4 @@ model <- lm(
         data = father.son,
         formula = fheight ~ sheight
 )
+
