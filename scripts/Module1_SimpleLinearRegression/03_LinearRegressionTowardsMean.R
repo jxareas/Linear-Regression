@@ -43,8 +43,12 @@ ggplot(data = father.son, mapping = aes(x = fheight, y = sheight, col = sheight)
 
 # Simple Linear Regression Model ------------------------------------------
 
-model <- lm(
+fit <- lm(
         data = father.son,
-        formula = fheight ~ sheight
+        formula = sheight ~ fheight
 )
 
+sumfit <- summary(fit)
+
+# Intercept is not statistically significant.
+# Son's Height is statistically significant

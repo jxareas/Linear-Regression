@@ -5,6 +5,7 @@ require(UsingR)
 require(tidyr)
 require(dplyr)
 require(ggthemes)
+require(stringr)
 
 # Data --------------------------------------------------------------------
 
