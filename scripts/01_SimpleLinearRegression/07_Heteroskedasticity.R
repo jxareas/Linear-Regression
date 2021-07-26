@@ -1,8 +1,8 @@
 # Packages ----------------------------------------------------------------
 
-require(ggplot2)
-require(dplyr)
-require(ggthemes)
+library(ggplot2)
+library(dplyr)
+library(ggthemes)
 
 # Data --------------------------------------------------------------------
 

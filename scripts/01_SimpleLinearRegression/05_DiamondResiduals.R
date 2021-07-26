@@ -1,8 +1,8 @@
 # Packages ----------------------------------------------------------------
 
-require(UsingR)
-require(ggplot2)
-require(ggthemes)
+library(UsingR)
+library(ggplot2)
+library(ggthemes)
 
 # Data --------------------------------------------------------------------
 

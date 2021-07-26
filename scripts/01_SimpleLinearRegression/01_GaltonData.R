@@ -1,11 +1,11 @@
 # Packages ----------------------------------------------------------------
 
-require(ggplot2)
-require(UsingR)
-require(tidyr)
-require(dplyr)
-require(ggthemes)
-require(stringr)
+library(ggplot2)
+library(UsingR)
+library(tidyr)
+library(dplyr)
+library(ggthemes)
+library(stringr)
 
 # Data --------------------------------------------------------------------
 

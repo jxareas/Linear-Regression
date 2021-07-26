@@ -1,8 +1,8 @@
 # Packages ----------------------------------------------------------------
 
-require(UsingR)
-require(ggplot2)
-require(dplyr)
+library(UsingR)
+library(ggplot2)
+library(dplyr)
 
 # Data Wrangling --------------------------------------------------------------------
 
