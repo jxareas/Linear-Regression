@@ -71,17 +71,17 @@ grid.arrange(
 
 # LN(PRICE) = β0 + β1LN(SQFT) + β2BED + β3BATH + β4FLOORS + β5DIST
 
-model <- lm(data = df,
+fit <- lm(data = df,
             formula = log(Price) ~ log(Sqft) + Bed + Bath + Floors + Distkm)
 
-summodel <- summary(model)
+summodel <- summary(fit)
 
 
 # Quiz Solution -----------------------------------------------------------
 
 # Question 1: B4 value
 # Report the estimated value of β4, round the answer to four decimal digits.
-model$coefficients[5]
+coef(fit)[5]
 
 # Question 2: Prediction
 # Using the estimated regression model, predict the price in dollars
@@ -89,12 +89,12 @@ model$coefficients[5]
 # is in a building with 8 Floors and is 1.2 Km from the City Park. 
 # Round your answer to a whole number.
 
-model$coefficients %*% c(1, log(1000), 2, 2, 8, 1.2) |> exp() |> round(0)
+coef(fit) %*% c(1, log(1000), 2, 2, 8, 1.2) |> exp() |> round(0)
 
 # Question 3: Confidence Bounds for Prediction
 # Calculate a 95% confidence interval for your predicted price
 predict.lm(
-        object = model,
+        object = fit,
         newdata= df[1, ] |> 
                 select(-Price) |> 
                 within({
