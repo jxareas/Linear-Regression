@@ -23,7 +23,7 @@ autoplot(fit, which = 1:6, colour = "blue4",
          smooth.colour = "red",
          ad.colour = "black",
          label.size = 3, label.n = 3, label.colour = "red3",
-         ncol = 3) + 
+         ncol = 3) +
         theme_light() +
         theme(
                 plot.title = element_text(face = "bold", hjust = .5),
