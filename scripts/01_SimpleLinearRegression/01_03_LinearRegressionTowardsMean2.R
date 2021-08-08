@@ -7,7 +7,7 @@ require(ggthemes)
 
 ##### Loading Data ------------------------------------------------------------
 
-df <- read.csv(file = "./datas/ToySales.csv", header = T)
+df <- read.csv(file = "./data/ToySales.csv", header = T)
 
 names(df) <- c("Month", "UnitSales", "Price", "AdExp", "PromExp")
 
