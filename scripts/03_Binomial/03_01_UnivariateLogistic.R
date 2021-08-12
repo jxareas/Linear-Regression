@@ -3,7 +3,6 @@
 library(ggplot2)
 library(ggthemes)
 
-
 # Data --------------------------------------------------------------------
 
 df <- read.csv("./data/Ravens.csv")
@@ -22,16 +21,17 @@ sumfit <- summary(fit)
 
 
 # Logistic Curve -----------------------------------------------------
-
-ggplot() +
+plot <- ggplot() +
         geom_point(mapping = aes(x = df$ravenScore, y = fit$fitted.values,
-                                 col = fit$fitted.values)) +
+                                 col = fit$fitted.values), size = 2) +
         geom_hline(yintercept = 1, col = "red", size = 1) +
+        geom_hline(yintercept = 0, col = "red", size = 1) +
         labs(
-                title = "Logistic Regression Curve",
+                title = "Sigmoid Curve",
                 x = "Score",
                 y = "Probability (Ravens Win)"
         ) +
+        coord_cartesian(ylim = c(0, 1), xlim = c(0, 70)) +
         scale_color_gradient(low = "magenta4", high = "blue") +
         theme_gdocs() +
         theme(
@@ -43,10 +43,14 @@ ggplot() +
                                             color = "dimgray")
         ) + guides(col = "none")
 
+plot
 
 # Confidence Intervals & Odd Ratios ---------------------------------------
 
+# Odd Ratios 
+odds <-
+        exp(coef(fit))
 
-exp(coef(fit))
-
-exp(confint(fit))
+# Confidence Intervals for the Odds
+confint_odds <-
+        exp(confint(fit))

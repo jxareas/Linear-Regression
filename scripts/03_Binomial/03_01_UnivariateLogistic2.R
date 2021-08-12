@@ -36,15 +36,16 @@ sumfit <-
 
 
 # Sigmoid Curve -----------------------------------------------------------
-
-ggplot() +
-        geom_point(mapping = aes(x = fit$data$damage, y = fit$fitted.values,
-                                 col = fit$fitted.values)) +
+plot <- 
+        ggplot() +
+        geom_point(mapping = aes(x = fit$data$temp, y = fit$fitted.values,
+                                 col = fit$fitted.values), size = 2) +
         geom_hline(yintercept = 1, col = "red", size = 1) +
+        geom_hline(yintercept = 0, col = "red", size = 1) +
         labs(
-                title = "Logistic Regression Curve",
-                x = "Score",
-                y = "Probability (Ravens Win)"
+                title = "Sigmoid Curve",
+                x = "Temperature At Launch (Fahrenheit)",
+                y = "Probability (Damaged O-Ring)"
         ) +
         scale_color_gradient(low = "magenta4", high = "blue") +
         theme_gdocs() +
@@ -57,4 +58,5 @@ ggplot() +
                                             color = "dimgray")
         ) + guides(col = "none")
 
+plot
 
