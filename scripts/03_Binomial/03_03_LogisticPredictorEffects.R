@@ -16,7 +16,7 @@ data("Mroz")
 fit <-
         glm(
                 data = Mroz,
-                formula = lfp ~ .,
+                formula = lfp ~ k5 + k618 + age + wc + hc + lwg + inc,
                 family = "binomial" (link = logit)
         )
 
