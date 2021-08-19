@@ -70,4 +70,4 @@ ggplot(data = residualsDf, mapping = aes(x = x, y = residuals, col = residuals))
                 axis.title.x = element_text(face = "bold"),
                 axis.title.y = element_text(face = "bold")
         ) +
-        guides(col = "none") -> plot
+        guides(col = "none") 
