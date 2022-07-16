@@ -44,4 +44,4 @@ ggplot(data = data, mapping = aes(x = carat, y = fit)) +
                 plot.subtitle = element_text(face = "italic", hjust = 0.5),
                 axis.title.x = element_text(face = "bold"),
                 axis.title.y = element_text(face = "bold")
-        ) 
+        )  -> plot

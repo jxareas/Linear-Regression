@@ -4,6 +4,7 @@ library(ggplot2)
 library(ggthemes)
 library(dplyr)
 library(purrr)
+library(car)
 
 # Simulation of Non-Linear Data -------------------------------------------
 
